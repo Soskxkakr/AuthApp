@@ -74,6 +74,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (!name && !email && !password)
       errors.push('All fields are required');
     
+    if (!name)
+      errors.push('Name is required');
+    
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(email.toLowerCase())) 
       errors.push('Invalid email');
     
